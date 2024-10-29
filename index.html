@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Impact Poll</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="poll-container">
+        <h1>Quick Poll</h1>
+        <p>What's the next topic you'd like to see discussed in our cohort sessions?</p>
+        <form id="pollForm">
+            <label class="option">
+                <input type="radio" name="topic" value="React Tips and Tricks" required> Recap on Html Css Javascript
+            </label><br>
+            <label class="option">
+                <input type="radio" name="topic" value="Backend Essentials"> How to Set up the Database in PHP
+            </label><br>
+            <label class="option">
+                <input type="radio" name="topic" value="Career Growth in Tech"> Quality Assurance Set up environment
+            </label><br>
+            <label class="option">
+                <input type="radio" name="topic" value="Debugging Techniques"> Debugging Techniques
+            </label><br><br>
+            <button type="button" class="submit-button" onclick="submitPoll()">Submit</button>
+        </form>
+        <p id="thanksMessage" style="display:none; color:green;">Thank you for your input!</p>
+    </div>
+
+    <script src="submit_pool.js"></script>
+</body>
+</html>
