@@ -5,6 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-color: #f0f0f0;
 }
 
 .poll-container { 
@@ -12,10 +13,12 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
 }
     
 h1 { 
     text-align: center;
+    color: #333;
 }
 
 .option {
@@ -29,8 +32,17 @@ h1 {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    width: 100%;
 }
- 
+
 .submit-button:hover {
     background-color: #45a049;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }

@@ -9,8 +9,12 @@
 <body>
     <div class="poll-container">
         <h1>Quick Poll</h1>
-        <p>What's the next topic you'd like to see discussed in our cohort sessions?</p>
-        <form id="pollForm">
+        <p>We value your input! Please share your details below:</p>
+        <form id="pollForm" name="pollForm" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="pollForm" />
+            <input type="text" class="input-field" placeholder="Your Name" name="name" required>
+            <input type="text" class="input-field" placeholder="Your Stack/Field of Study" name="stack" required>
+            <p>What's the next topic you'd like to see discussed in our cohort sessions?</p>
             <label class="option">
                 <input type="radio" name="topic" value="React Tips and Tricks" required> React Tips and Tricks
             </label><br>
@@ -23,7 +27,7 @@
             <label class="option">
                 <input type="radio" name="topic" value="Debugging Techniques"> Debugging Techniques
             </label><br><br>
-            <button type="button" class="submit-button" onclick="submitPoll()">Submit</button>
+            <button type="submit" class="submit-button">Submit</button>
         </form>
         <p id="thanksMessage" style="display:none; color:green;">Thank you for your input!</p>
     </div>
