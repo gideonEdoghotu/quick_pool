@@ -13,21 +13,25 @@
         <form id="pollForm" name="pollForm" method="POST" data-netlify="true">
             <input type="hidden" name="form-name" value="pollForm" />
             <input type="hidden" name="redirect" value="/thank_you.html" />
+            
+            <!-- Name Field -->
             <input type="text" class="input-field" placeholder="Your Name" name="name" required>
-            <input type="text" class="input-field" placeholder="Your Stack/Field of Study" name="stack" required>
-            <p>What's the next topic you'd like to see discussed in our cohort sessions?</p>
-            <label class="option">
-                <input type="radio" name="topic" value="React Tips and Tricks" required> React Tips and Tricks
-            </label><br>
-            <label class="option">
-                <input type="radio" name="topic" value="Backend Essentials"> Backend Essentials
-            </label><br>
-            <label class="option">
-                <input type="radio" name="topic" value="Career Growth in Tech"> Career Growth in Tech
-            </label><br>
-            <label class="option">
-                <input type="radio" name="topic" value="Debugging Techniques"> Debugging Techniques
-            </label><br><br>
+
+            <!-- Email Field -->
+            <input type="email" class="input-field" placeholder="Your Email" name="email" required>
+
+            <!-- Selection Field -->
+            <label class="option">Select your field:</label>
+            <select name="field" class="input-field" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Software Development">Software Development</option>
+                <option value="Quality Assurance">Quality Assurance</option>
+            </select>
+
+            <!-- Areas of Focus Field -->
+            <label class="option" for="areasFocus">Areas you want the tutor to focus on in the next session:</label>
+            <textarea id="areasFocus" name="areasFocus" class="input-field" rows="4" required></textarea>
+            
             <button type="submit" class="submit-button">Submit</button>
         </form>
         <p id="thanksMessage" style="display:none; color:green;">Thank you for your input!</p>
