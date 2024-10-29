@@ -1,26 +1,18 @@
-document.querySelector(".submit-button").addEventListener("click", async () => {
-    const selectedOption = document.querySelector('input[name="topic"]:checked');
+function submitPoll() {
+            const form = document.getElementById('pollForm');
+            const formData = new FormData(form);
+            const selectedOption = formData.get('topic');
+            if (selectedOption) {
+                // Log response to console (this could be sent to a server or stored locally for tracking)
+                console.log(`Selected topic: ${selectedOption}`);
+                document.getElementById('thanksMessage').style.display = 'block';
+                
+                // Here you could store the data in local storage
+                let responses = JSON.parse(localStorage.getItem('pollResponses')) || [];
+                responses.push(selectedOption);
+                localStorage.setItem('pollResponses', JSON.stringify(responses));
 
-    if (!selectedOption) {
-        alert("Please select an option before submitting.");
-        return;
-    }
-
-    const data = { topic: selectedOption.value };
-    
-    try {
-        const response = await fetch("/.netlify/functions/submitPoll", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-            document.getElementById("thanksMessage").style.display = "block";
-        } else {
-            console.error("Failed to submit poll", response.status);
+                // Reset the form and hide the form after submission
+                form.reset();
+            }
         }
-    } catch (error) {
-        console.error("Error submitting poll:", error);
-    }
-});

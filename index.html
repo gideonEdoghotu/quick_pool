@@ -12,18 +12,18 @@
         <p>What's the next topic you'd like to see discussed in our cohort sessions?</p>
         <form id="pollForm">
             <label class="option">
-                <input type="radio" name="topic" value="React Tips and Tricks" required> Recap on Html Css Javascript
+                <input type="radio" name="topic" value="React Tips and Tricks" required> React Tips and Tricks
             </label><br>
             <label class="option">
-                <input type="radio" name="topic" value="Backend Essentials"> How to Set up the Database in PHP
+                <input type="radio" name="topic" value="Backend Essentials"> Backend Essentials
             </label><br>
             <label class="option">
-                <input type="radio" name="topic" value="Career Growth in Tech"> Quality Assurance Set up environment
+                <input type="radio" name="topic" value="Career Growth in Tech"> Career Growth in Tech
             </label><br>
             <label class="option">
                 <input type="radio" name="topic" value="Debugging Techniques"> Debugging Techniques
             </label><br><br>
-            <button type="button" class="submit-button" >Submit</button>
+            <button type="button" class="submit-button" onclick="submitPoll()">Submit</button>
         </form>
         <p id="thanksMessage" style="display:none; color:green;">Thank you for your input!</p>
     </div>
